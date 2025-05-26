@@ -10,5 +10,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
+      - name: Create build directory
+        run: mkdir -p build
+
+      - name: Run CMake
+        run: cmake ..
+        working-directory: build
+
       - name: Run make
         run: make
+        working-directory: build
